@@ -15,10 +15,11 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
-	list = malloc(sizeof(t_list) * 1);
+	list = malloc(sizeof(t_list);
 	if (!list)
 		return (NULL);
-	list->content = content;
+	list->content = content; //1er content = celui de libft et le 2em celui en parametre
 	list->next = NULL;
 	return (list);
 }
+//https://www.youtube.com/watch?v=t_9Zz58PzxY

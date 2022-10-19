@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarco <smarco@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 15:04:25 by smarco            #+#    #+#             */
-/*   Updated: 2022/10/15 15:45:32 by smarco           ###   ########.fr       */
+/*   Created: 2022/10/18 22:17:48 by smarco            #+#    #+#             */
+/*   Updated: 2022/10/18 22:18:50 by smarco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	new->next = *lst; 
-	*lst = new;
+    while (lst)
+    {
+        f(lst->content);
+        lst = lst->next;
+    }
 }
-//on dit que new vas pointer sur lst

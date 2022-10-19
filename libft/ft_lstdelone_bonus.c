@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarco <smarco@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 15:04:25 by smarco            #+#    #+#             */
-/*   Updated: 2022/10/15 15:45:32 by smarco           ###   ########.fr       */
+/*   Created: 2022/10/18 21:14:39 by smarco            #+#    #+#             */
+/*   Updated: 2022/10/18 21:16:56 by smarco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del) (void *))
 {
-	new->next = *lst; 
-	*lst = new;
+    del(lst->content);
+    free(lst);
 }
-//on dit que new vas pointer sur lst
